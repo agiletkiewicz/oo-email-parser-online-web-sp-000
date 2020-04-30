@@ -13,10 +13,9 @@ class EmailAddressParser
   
   
   def parse 
-    parsed = @emails.split(/[," "]/)
-    formatted = parsed.delete_if {|i| i == ""}
+    parsed = @emails.split(/[," "]/).delete_if {|i| i == ""}
     final_array = []
-    formatted.each do |email| 
+    parsed.each do |email| 
       if !final_array.include?(email)
         final_array << email
       end
